@@ -212,10 +212,27 @@
       No spam, no inspirational quotes – just lethal drops.
     </p>
     <form action="https://formsubmit.co/pascal.fischer@murdersweet.com" method="POST">
-      <input type="email" id="popup-email" placeholder="you@rebelfuel.com" required>
-      <button type="submit" class="cta-btn primary">Notify Me</button>
-    </form>
-    <p class="popup-note">You can unsubscribe any time. Sugar can’t.</p>
+
+      <!-- Required hidden fields for FormSubmit reliability -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Rebel Fuel Signup">
+      <input type="hidden" name="_next" value="https://www.rebelfuel.com/thanks.html">
+
+      <!-- Your visible email input -->
+      <input 
+        type="email" 
+        name="email"               <!-- THIS FIXES THE PROBLEM -->
+        id="popup-email" 
+        placeholder="you@rebelfuel.com" 
+        required
+      >
+
+  <button type="submit" class="cta-btn primary">Notify Me</button>
+  </form>
+
+  <p class="popup-note">You can unsubscribe any time. Sugar can’t.</p>
+
   </div>
 </div>
 
