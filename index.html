@@ -4,19 +4,17 @@
   <meta charset="UTF-8">
   <title>Murder Sweet – Bury Your Sugar Habits</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Gothic logo + clean body font -->
+  <!-- Logo + body + heading fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bokor:wght@600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:wght@600;700&family=Bokor:wght@600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <script defer src="script.js"></script>
 </head>
 <body>
 
 <header id="header">
   <div class="logo-wordmark">
-    <!-- Pure blackletter logo wordmark; you can later replace with a custom SVG based on your Illustrator designs -->
     <span class="logo-main">Murder Sweet</span>
   </div>
   <nav>
@@ -30,7 +28,6 @@
 <!-- HERO WITH VIDEO BACKGROUND -->
 <section class="hero section" id="hero">
   <video autoplay muted loop playsinline class="bg-video">
-    <!-- Upload your own video file into the same folder and adjust the filename -->
     <source src="hero-video.mp4" type="video/mp4">
   </video>
   <div class="hero-gradient"></div>
@@ -49,7 +46,7 @@
   </div>
 </section>
   
-<!-- SWIPER PAGE -->
+<!-- SWIPER HERO SLIDER -->
 <section class="rf-hero-slider section">
   <p class="eyebrow">Featured Pods</p>
   <h2 class="rf-hero-title">Choose Your Weapon</h2>
@@ -67,7 +64,7 @@
         </div>
       </a>
 
-      <!-- SLIDE 2 (center) -->
+      <!-- SLIDE 2 -->
       <a href="#" class="swiper-slide hero-slide">
         <div class="hero-slide-inner">
           <img src="sachet-layer2.png" alt="Matcha Reaper" class="hero-slide-img" />
@@ -90,30 +87,30 @@
       <!-- SLIDE 4 -->
       <a href="#" class="swiper-slide hero-slide">
         <div class="hero-slide-inner">
-          <img src="sachet-layer4.png" alt="Cocoa Carnage" class="hero-slide-img" />
-          <h3>Cocoa Carnage</h3>
-          <p>Brutal cocoa flavour, no surrender to sugar.</p>
-          <span class="hero-pill">Recovery</span>
+          <img src="sachet-layer4.png" alt="Flavor 4" class="hero-slide-img" />
+          <h3>Flavor Four</h3>
+          <p>Another lethal profile, still zero sugar.</p>
+          <span class="hero-pill">Limited</span>
         </div>
       </a>
 
       <!-- SLIDE 5 -->
       <a href="#" class="swiper-slide hero-slide">
         <div class="hero-slide-inner">
-          <img src="sachet-layer5.png" alt="Cocoa Carnage" class="hero-slide-img" />
-          <h3>Cocoa Carnage</h3>
-          <p>Brutal cocoa flavour, no surrender to sugar.</p>
-          <span class="hero-pill">Recovery</span>
+          <img src="sachet-layer5.png" alt="Flavor 5" class="hero-slide-img" />
+          <h3>Flavor Five</h3>
+          <p>Built for chaos, not comfort.</p>
+          <span class="hero-pill">Energy</span>
         </div>
       </a>
 
-     <!-- SLIDE 5 -->
+      <!-- SLIDE 6 -->
       <a href="#" class="swiper-slide hero-slide">
         <div class="hero-slide-inner">
-          <img src="sachet-layer6.png" alt="Cocoa Carnage" class="hero-slide-img" />
-          <h3>Cocoa Carnage</h3>
-          <p>Brutal cocoa flavour, no surrender to sugar.</p>
-          <span class="hero-pill">Recovery</span>
+          <img src="sachet-layer6.png" alt="Flavor 6" class="hero-slide-img" />
+          <h3>Flavor Six</h3>
+          <p>For when you really want to hurt your sugar cravings.</p>
+          <span class="hero-pill">Special</span>
         </div>
       </a>
 
@@ -123,7 +120,6 @@
 
 <!-- PARALLAX SACHET SECTION -->
 <section class="section sachet-parallax" id="sachets">
-  <!-- Upload your own PNGs named sachet-layer1.png, sachet-layer2.png, sachet-layer3.png -->
   <div class="sachet-layer layer1">
     <img src="sachet-layer1.png" alt="Murder Sweet sachet layer 1">
   </div>
@@ -149,7 +145,7 @@
     <p class="eyebrow">Manifesto</p>
     <h2>We Don’t Do Balanced.</h2>
     <p>
-      We do battle‑ready nutrition. High impact, no fluff. If you want pastel
+      We do battle-ready nutrition. High impact, no fluff. If you want pastel
       smoothies and inspirational quotes, the internet is full of them.
     </p>
   </div>
@@ -190,12 +186,6 @@
 
     <!-- 360 PRODUCT ROTATION -->
     <div class="product-360-container">
-      <!-- 
-        To enable 360° view:
-        1. Export sequential images (e.g. product-360-01.png ... product-360-24.png)
-        2. Place them in this folder
-        3. Keep the prefix / extension below OR adjust data-prefix / data-ext
-      -->
       <div class="viewer360" 
            data-frames="24" 
            data-prefix="product-360-" 
@@ -213,7 +203,7 @@
       <div class="flavor-card float-anim" data-color="#ff0033">
         <h3>Berry Executioner</h3>
         <p>
-          Violent wild‑berry flavour, zero sugar. Good for your blender, lethal for your cravings.
+          Violent wild-berry flavour, zero sugar. Good for your blender, lethal for your cravings.
         </p>
         <div class="flavor-meta">
           <span class="tag">Sugar Dies Here</span>
@@ -224,10 +214,10 @@
       <div class="flavor-card float-anim" data-color="#c3ff00">
         <h3>Matcha Reaper</h3>
         <p>
-          Clean plant caffeine, long‑burn focus. All the edge, none of the crash.
+          Clean plant caffeine, long-burn focus. All the edge, none of the crash.
         </p>
         <div class="flavor-meta">
-          <span class="tag">Cold‑Blooded Calm</span>
+          <span class="tag">Cold-Blooded Calm</span>
           <span class="meta-pill">Energy</span>
         </div>
       </div>
@@ -246,7 +236,7 @@
       <div class="flavor-card float-anim" data-color="#00c4ff">
         <h3>Tropical Havoc</h3>
         <p>
-          Pineapple‑mango riot. Vacation for your taste buds, bootcamp for your discipline.
+          Pineapple-mango riot. Vacation for your taste buds, bootcamp for your discipline.
         </p>
         <div class="flavor-meta">
           <span class="tag">Limited Drop</span>
@@ -284,15 +274,12 @@
       Enter your email to be notified when new Murder Sweet flavours go live.
       No spam, no inspirational quotes – just lethal drops.
     </p>
-    <form action="https://formsubmit.co/pascal.fischer@murdersweet.com" method="POST">
-
-      <!-- Required hidden fields for FormSubmit reliability -->
+    <form id="popup-form" action="https://formsubmit.co/pascal.fischer@murdersweet.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_subject" value="New Rebel Fuel Signup">
       <input type="hidden" name="_next" value="https://www.murdersweet.com/thanks.html">
 
-      <!-- Your visible email input -->
       <input 
         type="email" 
         name="email"               
@@ -301,14 +288,16 @@
         required
       >
 
-  <button type="submit" class="cta-btn primary">Notify Me</button>
-  </form>
+      <button type="submit" class="cta-btn primary">Notify Me</button>
+    </form>
 
-  <p class="popup-note">You can unsubscribe any time. Sugar can’t.</p>
-
+    <p class="popup-note">You can unsubscribe any time. Sugar can’t.</p>
   </div>
 </div>
+
+<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
+
