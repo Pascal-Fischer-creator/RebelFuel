@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateFrame = (frame) => {
       const padded = String(frame).padStart(2, '0');
-      img.src = `${prefix}${padded}.${ext}`;   // ✅ FIXED PATH
+      img.src = `/${prefix}${padded}.${ext}`;   // absolute root path (correct for custom domain)
     };
 
     const onDrag = (clientX) => {
@@ -172,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
     popupOverlay.classList.add('open');
   };
 
-  // Show after 7 seconds OR on 50% page scroll
   setTimeout(showPopup, 7000);
 
   window.addEventListener('scroll', () => {
@@ -181,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (scrollPos / pageHeight > 0.5) showPopup();
   });
 
-  // Close popup
   closeBtn.addEventListener('click', () => popupOverlay.classList.remove('open'));
   popupOverlay.addEventListener('click', (e) => {
     if (e.target === popupOverlay) popupOverlay.classList.remove('open');
