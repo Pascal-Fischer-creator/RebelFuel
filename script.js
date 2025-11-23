@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ----------------------------------------------------
   // SCROLL REVEAL & WIPES
+  // ----------------------------------------------------
   const revealEls = document.querySelectorAll('.fade-in, .fade-slide-up, .scroll-reveal, .wipe-section');
   const scrollBg = document.querySelector('.scroll-bg-change');
 
@@ -13,6 +16,50 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.2 });
 
   revealEls.forEach(el => revealObserver.observe(el));
+
+
+
+  // ----------------------------------------------------
+  // LIQUID DEATH STYLE HERO SLIDER (Swiper Coverflow 3D)
+  // ----------------------------------------------------
+  const heroSwiper = new Swiper('.hero-swiper', {
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 1.3,
+    spaceBetween: 40,
+    speed: 600,
+    grabCursor: true,
+
+    effect: 'coverflow',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 140,
+      modifier: 1.4,
+      scale: 0.9,
+      slideShadows: false
+    },
+
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2.3,
+        spaceBetween: 50
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 60
+      }
+    }
+  });
+
+
+}); // END DOMContentLoaded
+
 
   // CTA background scroll change
   window.addEventListener('scroll', () => {
