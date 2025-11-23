@@ -16,21 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // CTA background scroll change
   window.addEventListener('scroll', () => {
+    if (!scrollBg) return;
     if (window.scrollY > 200) {
       scrollBg.classList.add('scrolled');
     } else {
       scrollBg.classList.remove('scrolled');
     }
-  });
-
-  // PARALLAX SACHETS
-  const layers = document.querySelectorAll('.sachet-layer');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    layers.forEach((layer, index) => {
-      const speed = (index + 1) * 0.15; // different speed per layer
-      layer.style.transform = `translateY(${scrollY * speed * -0.3}px)`;
-    });
   });
 
   // 360 PRODUCT ROTATION
@@ -100,6 +91,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // SACHET CARD DYNAMIC ACCENT COLOR (swiper slides)
+  const sachetCards = document.querySelectorAll('.sachet-card');
+  sachetCards.forEach(card => {
+    const color = card.dataset.color;
+    if (color) {
+      card.style.borderColor = color + '33';
+      const tag = card.querySelector('.tag');
+      const pill = card.querySelector('.meta-pill');
+      if (tag) tag.style.background = color + '22';
+      if (pill) pill.style.background = color + '18';
+    }
+  });
+
+  // SWIPER INIT (Sachets)
+  if (typeof Swiper !== 'undefined') {
+    const sachetSwiperEl = document.querySelector('.sachet-swiper');
+    if (sachetSwiperEl) {
+      // eslint-disable-next-line no-unused-vars
+      const sachetSwiper = new Swiper('.sachet-swiper', {
+        loop: true,
+        spaceBetween: 18,
+        slidesPerView: 1.1,
+        centeredSlides: true,
+        pagination: {
+          el: '.sachet-swiper .swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.sachet-swiper .swiper-button-next',
+          prevEl: '.sachet-swiper .swiper-button-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1.5,
+            centeredSlides: true,
+          },
+          900: {
+            slidesPerView: 2.2,
+            centeredSlides: false,
+          },
+          1200: {
+            slidesPerView: 3,
+            centeredSlides: false,
+            spaceBetween: 24,
+          },
+        },
+      });
+    }
+  }
+
   // EMAIL POPUP
   const popupOverlay = document.getElementById('email-popup');
   const closeBtn = document.querySelector('.popup-close');
@@ -108,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let popupShown = false;
 
   const showPopup = () => {
-    if (popupShown) return;
+    if (popupShown || !popupOverlay) return;
     popupShown = true;
     popupOverlay.classList.add('open');
   };
@@ -124,19 +165,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  closeBtn.addEventListener('click', () => popupOverlay.classList.remove('open'));
-  popupOverlay.addEventListener('click', (e) => {
-    if (e.target === popupOverlay) {
-      popupOverlay.classList.remove('open');
-    }
-  });
+  if (closeBtn && popupOverlay) {
+    closeBtn.addEventListener('click', () => popupOverlay.classList.remove('open'));
+    popupOverlay.addEventListener('click', (e) => {
+      if (e.target === popupOverlay) {
+        popupOverlay.classList.remove('open');
+      }
+    });
+  }
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('popup-email').value;
-    if (!email) return;
-    // Here you would normally send the email to your backend or a service like Mailchimp/Klaviyo
-    alert(`Thanks, rebel. We will notify: ${email}`);
-    popupOverlay.classList.remove('open');
-  });
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailInput = document.getElementById('popup-email');
+      const email = emailInput ? emailInput.value : '';
+      if (!email) return;
+      // Here you would normally send the email to your backend or a service like Mailchimp/Klaviyo
+      alert(`Thanks, rebel. We will notify: ${email}`);
+      if (popupOverlay) popupOverlay.classList.remove('open');
+    });
+  }
 });
