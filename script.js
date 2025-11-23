@@ -17,70 +17,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealEls.forEach(el => revealObserver.observe(el));
 
-
-
-  // ----------------------------------------------------
-  // LIQUID DEATH STYLE HERO SLIDER (Swiper Coverflow 3D)
-  // ----------------------------------------------------
-  const heroSwiper = new Swiper('.hero-swiper', {
-    loop: true,
-    centeredSlides: true,
-    slidesPerView: 1.3,
-    spaceBetween: 40,
-    speed: 600,
-    grabCursor: true,
-
-    effect: 'coverflow',
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 140,
-      modifier: 1.4,
-      scale: 0.9,
-      slideShadows: false
-    },
-
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false
-    },
-
-    breakpoints: {
-      768: {
-        slidesPerView: 2.3,
-        spaceBetween: 50
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 60
+  // CTA BACKGROUND SCROLL CHANGE
+  if (scrollBg) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        scrollBg.classList.add('scrolled');
+      } else {
+        scrollBg.classList.remove('scrolled');
       }
-    }
-  });
-
-
-}); // END DOMContentLoaded
-
-
-  // CTA background scroll change
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      scrollBg.classList.add('scrolled');
-    } else {
-      scrollBg.classList.remove('scrolled');
-    }
-  });
-
-  // PARALLAX SACHETS
-  const layers = document.querySelectorAll('.sachet-layer');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    layers.forEach((layer, index) => {
-      const speed = (index + 1) * 0.15; // different speed per layer
-      layer.style.transform = `translateY(${scrollY * speed * -0.3}px)`;
     });
-  });
+  }
 
+  // ----------------------------------------------------
+  // PARALLAX SACHETS
+  // ----------------------------------------------------
+  const layers = document.querySelectorAll('.sachet-layer');
+  if (layers.length > 0) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      layers.forEach((layer, index) => {
+        const speed = (index + 1) * 0.15;
+        layer.style.transform = `translateY(${scrollY * speed * -0.3}px)`;
+      });
+    });
+  }
+
+  // ----------------------------------------------------
   // 360 PRODUCT ROTATION
+  // ----------------------------------------------------
   const viewer = document.querySelector('.viewer360');
   if (viewer) {
     const img = viewer.querySelector('.viewer360-img');
@@ -92,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = 1;
 
     const updateFrame = (frame) => {
-      const padded = String(frame).padStart(2, '0'); // 01, 02, ...
+      const padded = String(frame).padStart(2, '0');
       img.src = `${prefix}${padded}.${ext}`;
     };
 
@@ -134,7 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('touchend', endDrag);
   }
 
+  // ----------------------------------------------------
   // FLAVOUR CARD DYNAMIC ACCENT COLOR
+  // ----------------------------------------------------
   const flavorCards = document.querySelectorAll('.flavor-card');
   flavorCards.forEach(card => {
     const color = card.dataset.color;
@@ -147,23 +113,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ----------------------------------------------------
   // EMAIL POPUP
+  // ----------------------------------------------------
   const popupOverlay = document.getElementById('email-popup');
-  const closeBtn = document.querySelector('.popup-close');
-  const form = document.getElementById('popup-form');
+  const closeBtn = popupOverlay ? popupOverlay.querySelector('.popup-close') : null;
+  const popupForm = document.getElementById('popup-form');
 
   let popupShown = false;
 
   const showPopup = () => {
-    if (popupShown) return;
+    if (!popupOverlay || popupShown) return;
     popupShown = true;
     popupOverlay.classList.add('open');
   };
 
-  // Show after 7 seconds OR when user scrolls past 50% of page height
+  // Show after 7 seconds
   setTimeout(showPopup, 7000);
 
+  // Or when user scrolls past 50% page height
   window.addEventListener('scroll', () => {
+    if (!popupOverlay || popupShown) return;
     const scrollPos = window.scrollY + window.innerHeight;
     const pageHeight = document.body.scrollHeight;
     if (scrollPos / pageHeight > 0.5) {
@@ -171,19 +141,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  closeBtn.addEventListener('click', () => popupOverlay.classList.remove('open'));
-  popupOverlay.addEventListener('click', (e) => {
-    if (e.target === popupOverlay) {
-      popupOverlay.classList.remove('open');
-    }
-  });
+  if (closeBtn && popupOverlay) {
+    closeBtn.addEventListener('click', () => popupOverlay.classList.remove('open'));
+    popupOverlay.addEventListener('click', (e) => {
+      if (e.target === popupOverlay) {
+        popupOverlay.classList.remove('open');
+      }
+    });
+  }
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('popup-email').value;
-    if (!email) return;
-    // Here you would normally send the email to your backend or a service like Mailchimp/Klaviyo
-    alert(`Thanks, rebel. We will notify: ${email}`);
-    popupOverlay.classList.remove('open');
-  });
-});
+  // Let FormSubmit handle submission – no preventDefault
+  if (popupForm) {
+    popupForm.addEventListener('submit', () => {
+      popupShown = true;
+      // optional: popupOverlay.classList.remove('open');
+      // but page will redirect anyway due to FormSubmit
+    });
+  }
+
+  // ----------------------------------------------------
+  // LIQUID DEATH STYLE HERO SLIDER (Swiper Coverflow 3D)
+  // ----------------------------------------------------
+  if (typeof Swiper !== 'undefined') {
+    const heroSwiper = new Swiper('.hero-swiper', {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 1.3,
+      spaceBetween: 40,
+      speed: 600,
+      grabCursor: true,
+
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 140,
+        modifier: 1.4,
+        scale: 0.9,
+        slideShadows: false
+      },
+
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false
+      },
+
+      breakpoints: {
+        768: {
+          slidesPerView: 2.3,
+          spaceBetween: 50
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 60
+        }
+      }
+    });
+  }
+
+}); // END DOMContentLoaded
+
