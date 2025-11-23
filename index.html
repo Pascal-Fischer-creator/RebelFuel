@@ -4,19 +4,27 @@
   <meta charset="UTF-8">
   <title>Murder Sweet – Bury Your Sugar Habits</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Gothic logo + clean body font -->
+
+  <!-- Fonts: Bodoni Moda SC (main), Bokor (logo only), Inter (optional UI fallback) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:opsz,wght@6..96,400;6..96,600;6..96,700&family=Bokor&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Swiper JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script defer src="script.js"></script>
 </head>
 <body>
 
 <header id="header">
   <div class="logo-wordmark">
-    <!-- Pure blackletter logo wordmark; you can later replace with a custom SVG based on your Illustrator designs -->
-    <span class="logo-main">Murder Sweet </span>
+    <!-- Bokor only here -->
+    <span class="logo-main">Murder Sweet</span>
   </div>
   <nav>
     <a href="#hero">Home</a>
@@ -48,25 +56,85 @@
   </div>
 </section>
 
-<!-- PARALLAX SACHET SECTION -->
-<section class="section sachet-parallax" id="sachets">
-  <!-- Upload your own PNGs named sachet-layer1.png, sachet-layer2.png, sachet-layer3.png -->
-  <div class="sachet-layer layer1">
-    <img src="sachet-layer1.png" alt="Rebel Fuel sachet layer 1">
-  </div>
-  <div class="sachet-layer layer2">
-    <img src="sachet-layer2.png" alt="Rebel Fuel sachet layer 2">
-  </div>
-  <div class="sachet-layer layer3">
-    <img src="sachet-layer3.png" alt="Rebel Fuel sachet layer 3">
-  </div>
-  <div class="sachet-text scroll-reveal">
-    <p class="eyebrow">Sachets</p>
-    <h2>Stacked To Attack</h2>
-    <p>
-      Not “balanced meals”. Battle rations. Tear, pour, blend – each sachet is
-      a controlled hit of real ingredients with sugar left out of the equation.
-    </p>
+<!-- SACHET SWIPER (replaces parallax section) -->
+<section class="section sachet-slider" id="sachets">
+  <div class="sachet-slider-inner fade-slide-up">
+    <div class="sachet-copy">
+      <p class="eyebrow">Sachets</p>
+      <h2>Stacked To Attack</h2>
+      <p>
+        Not “balanced meals”. Battle rations. Tear, pour, blend – each sachet is
+        a controlled hit of real ingredients with sugar left out of the equation.
+      </p>
+    </div>
+
+    <div class="sachet-swiper-wrapper">
+      <div class="swiper sachet-swiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="sachet-card" data-color="#ff0033">
+              <img src="sachet-berry-executioner.png" alt="Berry Executioner sachet">
+              <h3>Berry Executioner Sachet</h3>
+              <p>
+                Wild-berry carnage with zero sugar. Pocket-sized ammo for murdering afternoon cravings.
+              </p>
+              <div class="sachet-meta">
+                <span class="tag">Sugar Dies Here</span>
+                <span class="meta-pill">Focus</span>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="sachet-card" data-color="#c3ff00">
+              <img src="sachet-matcha-reaper.png" alt="Matcha Reaper sachet">
+              <h3>Matcha Reaper Sachet</h3>
+              <p>
+                Clean matcha. Long burn, no crash. Dump it into water and let discipline steep.
+              </p>
+              <div class="sachet-meta">
+                <span class="tag">Cold-Blooded Calm</span>
+                <span class="meta-pill">Energy</span>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="sachet-card" data-color="#ffaa00">
+              <img src="sachet-cocoa-carnage.png" alt="Cocoa Carnage sachet">
+              <h3>Cocoa Carnage Sachet</h3>
+              <p>
+                Dessert energy without surrendering to sugar. Thick cocoa, clean macros.
+              </p>
+              <div class="sachet-meta">
+                <span class="tag">Zero Guilt</span>
+                <span class="meta-pill">Recovery</span>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <div class="sachet-card" data-color="#00c4ff">
+              <img src="sachet-tropical-havoc.png" alt="Tropical Havoc sachet">
+              <h3>Tropical Havoc Sachet</h3>
+              <p>
+                Pineapple-mango chaos. Vacation taste, drill-sergeant discipline.
+              </p>
+              <div class="sachet-meta">
+                <span class="tag">Limited Drop</span>
+                <span class="meta-pill">Mood</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper controls -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -76,7 +144,7 @@
     <p class="eyebrow">Manifesto</p>
     <h2>We Don’t Do Balanced.</h2>
     <p>
-      We do battle‑ready nutrition. High impact, no fluff. If you want pastel
+      We do battle-ready nutrition. High impact, no fluff. If you want pastel
       smoothies and inspirational quotes, the internet is full of them.
     </p>
   </div>
@@ -133,91 +201,4 @@
       <p class="viewer-caption">
         Spin the pod. Check every angle. This is what murdering your sugar habits looks like.
       </p>
-    </div>
 
-    <!-- ANIMATED FLAVOUR CARDS -->
-    <div class="flavor-grid">
-      <div class="flavor-card float-anim" data-color="#ff0033">
-        <h3>Berry Executioner</h3>
-        <p>
-          Violent wild‑berry flavour, zero sugar. Good for your blender, lethal for your cravings.
-        </p>
-        <div class="flavor-meta">
-          <span class="tag">Sugar Dies Here</span>
-          <span class="meta-pill">Focus</span>
-        </div>
-      </div>
-
-      <div class="flavor-card float-anim" data-color="#c3ff00">
-        <h3>Matcha Reaper</h3>
-        <p>
-          Clean plant caffeine, long‑burn focus. All the edge, none of the crash.
-        </p>
-        <div class="flavor-meta">
-          <span class="tag">Cold‑Blooded Calm</span>
-          <span class="meta-pill">Energy</span>
-        </div>
-      </div>
-
-      <div class="flavor-card float-anim" data-color="#ffaa00">
-        <h3>Cocoa Carnage</h3>
-        <p>
-          Thick cocoa for people who want dessert without surrendering to sugar.
-        </p>
-        <div class="flavor-meta">
-          <span class="tag">Zero Guilt</span>
-          <span class="meta-pill">Recovery</span>
-        </div>
-      </div>
-
-      <div class="flavor-card float-anim" data-color="#00c4ff">
-        <h3>Tropical Havoc</h3>
-        <p>
-          Pineapple‑mango riot. Vacation for your taste buds, bootcamp for your discipline.
-        </p>
-        <div class="flavor-meta">
-          <span class="tag">Limited Drop</span>
-          <span class="meta-pill">Mood</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA SECTION WITH BACKGROUND CHANGE ON SCROLL -->
-<section class="scroll-bg-change section" id="cta">
-  <div class="cta-content">
-    <p class="eyebrow">Next Move</p>
-    <h2>Ready To Join The Rebels?</h2>
-    <p>
-      Get early access to new flavours, test batches and limited drops before
-      they vanish into legend.
-    </p>
-    <a href="shop.html" class="cta-btn primary">View All Pods</a>
-  </div>
-</section>
-
-<footer>
-  <p>© 2025 Rebel Fuel – Bury Your Sugar Habits.</p>
-</footer>
-
-<!-- EMAIL SUBSCRIBE POPUP -->
-<div id="email-popup" class="popup-overlay">
-  <div class="popup">
-    <button class="popup-close" aria-label="Close popup">×</button>
-    <p class="eyebrow">Warning</p>
-    <h2>Limited Drops. No Second Chances.</h2>
-    <p>
-      Enter your email to be notified when new Rebel Fuel flavours go live.
-      No spam, no inspirational quotes – just lethal drops.
-    </p>
-    <form id="popup-form">
-      <input type="email" id="popup-email" placeholder="you@rebelfuel.com" required>
-      <button type="submit" class="cta-btn primary">Notify Me</button>
-    </form>
-    <p class="popup-note">You can unsubscribe any time. Sugar can’t.</p>
-  </div>
-</div>
-
-</body>
-</html>
