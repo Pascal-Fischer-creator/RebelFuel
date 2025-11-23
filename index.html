@@ -31,30 +31,58 @@
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero section" id="hero">
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="hero-video.mp4" type="video/mp4">
-  </video>
-  <div class="hero-gradient"></div>
+<!-- HERO — FULLSCREEN SWIPE CAROUSEL -->
+<section class="hero-swiper-container" id="hero">
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
 
-  <div class="hero-content fade-in">
+      <!-- Slide 1 -->
+      <div class="swiper-slide hero-slide">
+        <video autoplay muted loop playsinline class="hero-media">
+          <source src="hero-video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide hero-slide">
+        <video autoplay muted loop playsinline class="hero-media">
+          <source src="hero-video2.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide hero-slide">
+        <img src="hero-image1.jpg" class="hero-media" alt="Hero Image 1">
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide hero-slide">
+        <img src="hero-image2.jpg" class="hero-media" alt="Hero Image 2">
+      </div>
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- HERO TEXT OVERLAY -->
+  <div class="hero-overlay fade-in">
     <p class="eyebrow">Functional Nutrition • Zero Sugar • Zero Compromise</p>
     <h1>Bury Your Sugar Habits</h1>
     <p class="hero-copy">
-      Murder Sweet is weaponized nutrition for people who are done sipping sugar.
+      Rebel Fuel is weaponized nutrition for people who are done sipping sugar.
     </p>
 
     <div class="hero-cta-row">
       <a href="#products" class="cta-btn primary">Enter the Fray</a>
-      <a href="shop.html" class="cta-btn ghost">View All Drops</a>
+      <a href="shop.html" class="cta-btn ghost">Shop Now</a>
     </div>
 
     <p class="hero-disclaimer">Not recommended for soft people.</p>
   </div>
 </section>
 
-<!-- LIQUID-DEATH STYLE SACHET SLIDER -->
+<!-- SACHET SLIDER -->
 <section class="section sachet-slider" id="sachets">
   <p class="eyebrow">Sachets</p>
   <h2 class="sachet-title">Stacked To Attack</h2>
@@ -118,33 +146,27 @@
 </section>
 
 <!-- SECTION WIPES -->
-<section class="wipe-section wipe-dark" id="mission">
+<section class="wipe-section wipe-dark">
   <div class="wipe-inner">
     <p class="eyebrow">Manifesto</p>
     <h2>We Don’t Do Balanced.</h2>
-    <p>
-      We do battle-ready nutrition. High impact, no pastel smoothies.
-    </p>
+    <p>We do battle-ready nutrition.</p>
   </div>
 </section>
 
-<section class="wipe-section wipe-light" id="science">
+<section class="wipe-section wipe-light">
   <div class="wipe-inner">
     <p class="eyebrow">Formulation</p>
     <h2>Engineered For Performance.</h2>
-    <p>
-      Real ingredients. Zero quiet sugar bombs.
-    </p>
+    <p>Real ingredients. Zero sugar traps.</p>
   </div>
 </section>
 
-<section class="wipe-section wipe-danger" id="manifesto">
+<section class="wipe-section wipe-danger">
   <div class="wipe-inner">
     <p class="eyebrow">Sugar Is The Enemy</p>
     <h2>Rebel Fuel Is The Weapon.</h2>
-    <p>
-      Every pod is a shovel of dirt on your old habits.
-    </p>
+    <p>Shovel dirt on your old cravings.</p>
   </div>
 </section>
 
@@ -152,12 +174,9 @@
 <section class="product-showcase section fade-slide-up" id="products">
   <p class="eyebrow">Pods</p>
   <h2>Featured Rogue Pods</h2>
-  <p class="section-intro">
-    Choose your weapon.
-  </p>
+  <p class="section-intro">Choose your weapon.</p>
 
   <div class="product-layout">
-
     <div class="product-360-container">
       <div class="viewer360"
         data-frames="24"
@@ -166,9 +185,7 @@
         <img src="product-360-01.png" class="viewer360-img">
         <div class="viewer360-hint">Drag to inspect</div>
       </div>
-      <p class="viewer-caption">
-        360° inspection. Zero sugar, full threat.
-      </p>
+      <p class="viewer-caption">360° inspection. Zero sugar, full threat.</p>
     </div>
 
     <div class="flavor-grid">
@@ -208,7 +225,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -218,29 +234,13 @@
     <p class="eyebrow">Next Move</p>
     <h2>Ready To Join The Rebels?</h2>
     <p>Get early access to drops.</p>
-    <a href="shop.html" class="cta-btn primary">View All Pods</a>
+    <a href="shop.html" class="cta-btn primary">Shop Now</a>
   </div>
 </section>
 
 <footer>
   <p>© 2025 Rebel Fuel – Bury Your Sugar Habits.</p>
 </footer>
-
-<div id="email-popup" class="popup-overlay">
-  <div class="popup">
-    <button class="popup-close">×</button>
-    <p class="eyebrow">Warning</p>
-    <h2>Limited Drops. No Second Chances.</h2>
-    <p>Enter your email to be notified.</p>
-
-    <form id="popup-form">
-      <input type="email" id="popup-email" placeholder="you@rebelfuel.com" required>
-      <button type="submit" class="cta-btn primary">Notify Me</button>
-    </form>
-
-    <p class="popup-note">You can unsubscribe anytime.</p>
-  </div>
-</div>
 
 </body>
 </html>
