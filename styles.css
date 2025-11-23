@@ -141,6 +141,12 @@ header nav a {
   color: #000
 }
 
+.sachet-slider h2,
+.sachet-slider h3,
+.sachet-slider p {
+  color: #000 !important;
+}
+
 .sachet-title {
   font-size: 2.6rem;
 }
