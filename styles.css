@@ -1,3 +1,6 @@
+/* ========================================= */
+/*  ROOT VARIABLES                           */
+/* ========================================= */
 :root {
   --bg: #050505;
   --text: #f5f5f5;
@@ -7,7 +10,9 @@
   --border-subtle: #262626;
 }
 
-/* GLOBAL */
+/* ========================================= */
+/* GLOBAL BASE STYLES                        */
+/* ========================================= */
 body {
   margin: 0;
   font-family: 'Bodoni Moda SC', serif;
@@ -16,10 +21,14 @@ body {
   overflow-x: hidden;
 }
 
-/* HEADER */
+a { text-decoration: none; }
+
+/* ========================================= */
+/* HEADER                                    */
+/* ========================================= */
 header {
   position: fixed;
-  top: 0; 
+  top: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -37,46 +46,49 @@ header {
 
 header nav a {
   color: #fff;
-  text-decoration: none;
   margin-left: 22px;
   font-size: 0.85rem;
   font-weight: 600;
 }
 
-/* HERO SWIPER */
+/* ========================================= */
+/* HERO SWIPER                               */
+/* ========================================= */
 .hero-swiper-container {
   position: relative;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
 }
 
-.hero-swiper, .hero-slide {
+.hero-swiper, 
+.hero-slide {
   height: 100%;
 }
 
 .hero-media {
   position: absolute;
   inset: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(0.55);
 }
 
-/* HERO CONTENT */
+/* HERO TEXT */
 .hero-overlay {
   position: absolute;
-  top: 50%; 
+  top: 50%;
   left: 7vw;
   transform: translateY(-50%);
   max-width: 520px;
   z-index: 30;
+  text-align: left;
 }
 
 .eyebrow {
   text-transform: uppercase;
-  font-size: 0.7rem;
   letter-spacing: 0.18em;
+  font-size: 0.7rem;
   color: var(--muted);
 }
 
@@ -86,9 +98,9 @@ header nav a {
 }
 
 .hero-copy {
+  color: var(--muted);
   font-size: 1rem;
   margin: 12px 0 26px;
-  color: var(--muted);
 }
 
 .hero-cta-row {
@@ -99,16 +111,19 @@ header nav a {
 .cta-btn {
   padding: 12px 26px;
   border-radius: 999px;
-  text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
   color: #fff;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-.primary { background: var(--accent); }
-.ghost { border: 1px solid #fff; }
+.primary {
+  background: var(--accent);
+}
+.ghost {
+  border: 1px solid #fff;
+}
 
 .hero-disclaimer {
   margin-top: 10px;
@@ -116,26 +131,28 @@ header nav a {
   color: var(--muted);
 }
 
-/* SACHET SLIDER */
+/* ========================================= */
+/* SACHET SLIDER                             */
+/* ========================================= */
 .sachet-slider {
   padding: 140px 0 120px;
   text-align: center;
 }
 
-.sachet-title { 
-  font-size: 2.6rem; 
+.sachet-title {
+  font-size: 2.6rem;
 }
 
-.sachet-sub { 
-  color: var(--muted); 
+.sachet-sub {
+  color: var(--muted);
 }
 
-.sachet-swiper { 
-  padding: 20px 0 60px; 
+.sachet-swiper {
+  padding: 20px 0 60px;
 }
 
-.sachet-swiper .swiper-slide { 
-  width: 260px; 
+.sachet-swiper .swiper-slide {
+  width: 260px;
 }
 
 .sachet-item img {
@@ -153,28 +170,46 @@ header nav a {
   font-size: 1.3rem;
 }
 
-/* SECTION WIPES */
+/* ========================================= */
+/* WIPE SECTIONS (SMALLER + CENTERED)        */
+/* ========================================= */
 .wipe-section {
-  height: auto;
-  display: flex; 
-  justify-content: center; 
+  width: 100%;
+  padding: 100px 7vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 80px 7vw;
 }
 
+.wipe-section h2 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.wipe-section p {
+  color: inherit;
+  font-size: 1rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Background colors */
 .wipe-dark { background: #050505; }
 .wipe-light { background: #f5f5f5; color: #111; }
 .wipe-danger { background: var(--accent); }
 
-/* PRODUCT SHOWCASE */
+/* ========================================= */
+/* PRODUCT SHOWCASE                          */
+/* ========================================= */
 .product-showcase {
   padding: 120px 7vw;
 }
 
 .product-layout {
   display: grid;
-  gap: 40px;
   grid-template-columns: 1fr 1fr;
+  gap: 40px;
 }
 
 .viewer360 {
@@ -183,11 +218,13 @@ header nav a {
   margin: 0 auto;
 }
 
-.viewer360-img { width: 100%; }
+.viewer360-img {
+  width: 100%;
+}
 
-/* FLAVOR GRID */
+/* FLAVORS */
 .flavor-grid {
-  display: grid; 
+  display: grid;
   gap: 22px;
   grid-template-columns: 1fr 1fr;
 }
@@ -199,9 +236,13 @@ header nav a {
   border: 1px solid var(--border-subtle);
 }
 
-.flavor-card h3 { font-size: 1.2rem; }
+.flavor-card h3 {
+  font-size: 1.2rem;
+}
 
-/* CTA */
+/* ========================================= */
+/* CTA SECTION                               */
+/* ========================================= */
 .scroll-bg-change {
   background: linear-gradient(120deg, #111, #050505);
   padding: 120px 7vw;
@@ -212,17 +253,18 @@ header nav a {
   font-size: 2.2rem;
 }
 
-/* FOOTER */
+/* ========================================= */
+/* FOOTER                                    */
+/* ========================================= */
 footer {
   padding: 40px 0;
   text-align: center;
   color: var(--muted);
 }
 
-/* ======================================= */
-/* SHOP PAGE — FULLY CENTERED + CLEAN      */
-/* ======================================= */
-
+/* ========================================= */
+/* SHOP PAGE                                 */
+/* ========================================= */
 .shop-section {
   padding: 160px 7vw 120px;
   text-align: center;
@@ -231,32 +273,29 @@ footer {
 .shop-title {
   font-family: 'Bodoni Moda SC', serif;
   font-size: 2.6rem;
-  text-align: center;
-  margin: 0 auto 14px auto;
   font-weight: 700;
+  text-align: center;
+  margin-bottom: 14px;
 }
 
 .shop-sub {
   max-width: 540px;
   margin: 0 auto 32px auto;
-  color: var(--muted);
   font-size: 1rem;
   line-height: 1.55;
-  font-family: 'Bodoni Moda SC', serif;
+  color: var(--muted);
   text-align: center;
 }
 
 .shop-btn {
-  margin-top: 14px;
   display: inline-block;
+  margin-top: 14px;
   font-family: 'Bodoni Moda SC', serif;
-  text-align: center;
 }
 
-/* Fix eyebrow alignment on shop page */
+/* Ensure eyebrow centers on shop page */
 .shop-section .eyebrow {
   text-align: center;
-  width: 100%;
   display: block;
 }
 
