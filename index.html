@@ -4,79 +4,220 @@
   <meta charset="UTF-8">
   <title>Murder Sweet – Bury Your Sugar Habits</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <!-- Gothic logo + clean body font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bokor:wght@600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Correct absolute path for GitHub Pages custom domain root -->
-  <link rel="stylesheet" href="/styles.css">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
 <header id="header">
   <div class="logo-wordmark">
-    <span class="logo-main">Murder Sweet</span>
+    <!-- Pure blackletter logo wordmark; you can later replace with a custom SVG based on your Illustrator designs -->
+    <span class="logo-main">Murder Sweet </span>
   </div>
   <nav>
     <a href="#hero">Home</a>
     <a href="#products">Pods</a>
     <a href="#sachets">Sachets</a>
-    <a href="/shop.html">Shop</a>
+    <a href="shop.html">Shop</a>
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO WITH VIDEO BACKGROUND -->
 <section class="hero section" id="hero">
   <video autoplay muted loop playsinline class="bg-video">
-    <source src="/hero-video.mp4" type="video/mp4">
+    <!-- Upload your own video file into the same folder and adjust the filename -->
+    <source src="hero-video.mp4" type="video/mp4">
   </video>
-
   <div class="hero-gradient"></div>
-
   <div class="hero-content fade-in">
     <p class="eyebrow">Functional Nutrition • Zero Sugar • Zero Compromise</p>
     <h1>Bury Your Sugar Habits</h1>
     <p class="hero-copy">
-      Murder Sweet is weaponized nutrition for people who are done sipping sugar.
+      Rebel Fuel is weaponized nutrition for people who are done sipping sugar.
+      Pods built for focus, flavour and discipline – not fake wellness vibes.
     </p>
     <div class="hero-cta-row">
       <a href="#products" class="cta-btn primary">Enter the Fray</a>
-      <a href="/shop.html" class="cta-btn ghost">View All Drops</a>
+      <a href="shop.html" class="cta-btn ghost">View All Drops</a>
+    </div>
+    <p class="hero-disclaimer">Not recommended for soft people.</p>
+  </div>
+</section>
+
+<!-- PARALLAX SACHET SECTION -->
+<section class="section sachet-parallax" id="sachets">
+  <!-- Upload your own PNGs named sachet-layer1.png, sachet-layer2.png, sachet-layer3.png -->
+  <div class="sachet-layer layer1">
+    <img src="sachet-layer1.png" alt="Rebel Fuel sachet layer 1">
+  </div>
+  <div class="sachet-layer layer2">
+    <img src="sachet-layer2.png" alt="Rebel Fuel sachet layer 2">
+  </div>
+  <div class="sachet-layer layer3">
+    <img src="sachet-layer3.png" alt="Rebel Fuel sachet layer 3">
+  </div>
+  <div class="sachet-text scroll-reveal">
+    <p class="eyebrow">Sachets</p>
+    <h2>Stacked To Attack</h2>
+    <p>
+      Not “balanced meals”. Battle rations. Tear, pour, blend – each sachet is
+      a controlled hit of real ingredients with sugar left out of the equation.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION WIPES -->
+<section class="wipe-section wipe-dark" id="mission">
+  <div class="wipe-inner">
+    <p class="eyebrow">Manifesto</p>
+    <h2>We Don’t Do Balanced.</h2>
+    <p>
+      We do battle‑ready nutrition. High impact, no fluff. If you want pastel
+      smoothies and inspirational quotes, the internet is full of them.
+    </p>
+  </div>
+</section>
+
+<section class="wipe-section wipe-light" id="science">
+  <div class="wipe-inner">
+    <p class="eyebrow">Formulation</p>
+    <h2>Engineered For Performance.</h2>
+    <p>
+      Real fruit powders, real plants, real macros. No fake sweeteners posing
+      as “health”, no quiet sugar bombs hiding in the back label.
+    </p>
+  </div>
+</section>
+
+<section class="wipe-section wipe-danger" id="manifesto">
+  <div class="wipe-inner">
+    <p class="eyebrow">Sugar Is The Enemy</p>
+    <h2>Rebel Fuel Is The Weapon.</h2>
+    <p>
+      Every pod is one more shovel of dirt on your sugar habits. Hydrate,
+      dominate, and leave your old cravings in the grave.
+    </p>
+  </div>
+</section>
+
+<!-- PRODUCT SHOWCASE WITH 360 VIEWER + FLAVOUR CARDS -->
+<section class="product-showcase section fade-slide-up" id="products">
+  <p class="eyebrow">Pods</p>
+  <h2>Featured Rogue Pods</h2>
+  <p class="section-intro">
+    Choose your weapon. Each pod is built for a different mission – focus,
+    energy, recovery or chaos. Zero sugar, maximum intent.
+  </p>
+
+  <div class="product-layout">
+
+    <!-- 360 PRODUCT ROTATION -->
+    <div class="product-360-container">
+      <!-- 
+        To enable 360° view:
+        1. Export sequential images (e.g. product-360-01.png ... product-360-24.png)
+        2. Place them in this folder
+        3. Keep the prefix / extension below OR adjust data-prefix / data-ext
+      -->
+      <div class="viewer360" 
+           data-frames="24" 
+           data-prefix="product-360-" 
+           data-ext="png">
+        <img src="product-360-01.png" alt="Rebel Fuel pod 360° view" class="viewer360-img">
+        <div class="viewer360-hint">Drag to inspect the weapon</div>
+      </div>
+      <p class="viewer-caption">
+        Spin the pod. Check every angle. This is what murdering your sugar habits looks like.
+      </p>
+    </div>
+
+    <!-- ANIMATED FLAVOUR CARDS -->
+    <div class="flavor-grid">
+      <div class="flavor-card float-anim" data-color="#ff0033">
+        <h3>Berry Executioner</h3>
+        <p>
+          Violent wild‑berry flavour, zero sugar. Good for your blender, lethal for your cravings.
+        </p>
+        <div class="flavor-meta">
+          <span class="tag">Sugar Dies Here</span>
+          <span class="meta-pill">Focus</span>
+        </div>
+      </div>
+
+      <div class="flavor-card float-anim" data-color="#c3ff00">
+        <h3>Matcha Reaper</h3>
+        <p>
+          Clean plant caffeine, long‑burn focus. All the edge, none of the crash.
+        </p>
+        <div class="flavor-meta">
+          <span class="tag">Cold‑Blooded Calm</span>
+          <span class="meta-pill">Energy</span>
+        </div>
+      </div>
+
+      <div class="flavor-card float-anim" data-color="#ffaa00">
+        <h3>Cocoa Carnage</h3>
+        <p>
+          Thick cocoa for people who want dessert without surrendering to sugar.
+        </p>
+        <div class="flavor-meta">
+          <span class="tag">Zero Guilt</span>
+          <span class="meta-pill">Recovery</span>
+        </div>
+      </div>
+
+      <div class="flavor-card float-anim" data-color="#00c4ff">
+        <h3>Tropical Havoc</h3>
+        <p>
+          Pineapple‑mango riot. Vacation for your taste buds, bootcamp for your discipline.
+        </p>
+        <div class="flavor-meta">
+          <span class="tag">Limited Drop</span>
+          <span class="meta-pill">Mood</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SWIPER -->
-<section class="rf-hero-slider section">
-  <p class="eyebrow">Featured Pods</p>
-  <h2 class="rf-hero-title">Choose Your Weapon</h2>
+<!-- CTA SECTION WITH BACKGROUND CHANGE ON SCROLL -->
+<section class="scroll-bg-change section" id="cta">
+  <div class="cta-content">
+    <p class="eyebrow">Next Move</p>
+    <h2>Ready To Join The Rebels?</h2>
+    <p>
+      Get early access to new flavours, test batches and limited drops before
+      they vanish into legend.
+    </p>
+    <a href="shop.html" class="cta-btn primary">View All Pods</a>
+  </div>
+</section>
 
-  <div class="swiper hero-swiper">
-    <div class="swiper-wrapper">
+<footer>
+  <p>© 2025 Rebel Fuel – Bury Your Sugar Habits.</p>
+</footer>
 
-      <a class="swiper-slide hero-slide">
-        <div class="hero-slide-inner">
-          <img src="/sachet-layer1.png" class="hero-slide-img">
-          <h3>Berry Executioner</h3>
-          <p>Savage wild-berry pod with zero sugar.</p>
-          <span class="hero-pill">0 Sugar</span>
-        </div>
-      </a>
+<!-- EMAIL SUBSCRIBE POPUP -->
+<div id="email-popup" class="popup-overlay">
+  <div class="popup">
+    <button class="popup-close" aria-label="Close popup">×</button>
+    <p class="eyebrow">Warning</p>
+    <h2>Limited Drops. No Second Chances.</h2>
+    <p>
+      Enter your email to be notified when new Rebel Fuel flavours go live.
+      No spam, no inspirational quotes – just lethal drops.
+    </p>
+    <form id="popup-form">
+      <input type="email" id="popup-email" placeholder="you@rebelfuel.com" required>
+      <button type="submit" class="cta-btn primary">Notify Me</button>
+    </form>
+    <p class="popup-note">You can unsubscribe any time. Sugar can’t.</p>
+  </div>
+</div>
 
-      <a class="swiper-slide hero-slide">
-        <div class="hero-slide-inner">
-          <img src="/sachet-layer2.png" class="hero-slide-img">
-          <h3>Matcha Reaper</h3>
-          <p>Clean green focus with long-burn energy.</p>
-          <span class="hero-pill">Focus</span>
-        </div>
-      </a>
-
-      <a class="swiper-slide hero-slide">
-        <div class="hero-slide-inner">
-          <img src="/sachet-layer3.png"
-
-
+</body>
+</html>
