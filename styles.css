@@ -1,293 +1,499 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Murder Sweet – Bury Your Sugar Habits</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+:root {
+  --bg: #050505;
+  --bg-alt: #0a0a0a;
+  --text: #f5f5f5;
+  --muted: #b0b0b0;
+  --accent: #ff0033;
+  --accent-soft: rgba(255, 0, 51, 0.18);
+  --accent-strong: rgba(255, 0, 51, 0.55);
+  --card-bg: #141414;
+  --border-subtle: #262626;
+}
 
-  <!-- Fonts: Bodoni Moda SC (main), Bokor (logo only), Inter (optional UI fallback) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:opsz,wght@6..96,400;6..96,600;6..96,700&family=Bokor&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+body {
+  font-family: 'Bodoni Moda SC', serif;
+  background: radial-gradient(circle at top, #161616 0, #050505 45%, #000000 100%);
+  color: var(--text);
+  overflow-x: hidden;
+}
 
-  <link rel="stylesheet" href="styles.css">
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 14px 7vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(14px);
+  z-index: 20;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
 
-  <!-- Swiper JS -->
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script defer src="script.js"></script>
-</head>
-<body>
+.logo-main {
+  font-family: 'Bokor', cursive;
+  font-size: 1.8rem;
+  color: #fff;
+  letter-spacing: 2px;
+}
 
-<header id="header">
-  <div class="logo-wordmark">
-    <!-- Bokor only here -->
-    <span class="logo-main">Murder Sweet</span>
-  </div>
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#products">Pods</a>
-    <a href="#sachets">Sachets</a>
-    <a href="shop.html">Shop</a>
-  </nav>
-</header>
+header nav a {
+  color: var(--text);
+  margin-left: 22px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.88;
+}
 
-<!-- HERO WITH VIDEO BACKGROUND -->
-<section class="hero section" id="hero">
-  <video autoplay muted loop playsinline class="bg-video">
-    <!-- Upload your own video file into the same folder and adjust the filename -->
-    <source src="hero-video.mp4" type="video/mp4">
-  </video>
-  <div class="hero-gradient"></div>
-  <div class="hero-content fade-in">
-    <p class="eyebrow">Functional Nutrition • Zero Sugar • Zero Compromise</p>
-    <h1>Bury Your Sugar Habits</h1>
-    <p class="hero-copy">
-      Rebel Fuel is weaponized nutrition for people who are done sipping sugar.
-      Pods built for focus, flavour and discipline – not fake wellness vibes.
-    </p>
-    <div class="hero-cta-row">
-      <a href="#products" class="cta-btn primary">Enter the Fray</a>
-      <a href="shop.html" class="cta-btn ghost">View All Drops</a>
-    </div>
-    <p class="hero-disclaimer">Not recommended for soft people.</p>
-  </div>
-</section>
+header nav a:hover {
+  opacity: 1;
+}
 
-<!-- SACHET SWIPER (replaces parallax section) -->
-<section class="section sachet-slider" id="sachets">
-  <div class="sachet-slider-inner fade-slide-up">
-    <div class="sachet-copy">
-      <p class="eyebrow">Sachets</p>
-      <h2>Stacked To Attack</h2>
-      <p>
-        Not “balanced meals”. Battle rations. Tear, pour, blend – each sachet is
-        a controlled hit of real ingredients with sugar left out of the equation.
-      </p>
-    </div>
+/* SECTIONS */
+.section {
+  padding: 120px 8vw;
+  text-align: center;
+}
 
-    <div class="sachet-swiper-wrapper">
-      <div class="swiper sachet-swiper">
-        <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide">
-            <div class="sachet-card" data-color="#ff0033">
-              <img src="sachet-berry-executioner.png" alt="Berry Executioner sachet">
-              <h3>Berry Executioner Sachet</h3>
-              <p>
-                Wild-berry carnage with zero sugar. Pocket-sized ammo for murdering afternoon cravings.
-              </p>
-              <div class="sachet-meta">
-                <span class="tag">Sugar Dies Here</span>
-                <span class="meta-pill">Focus</span>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="swiper-slide">
-            <div class="sachet-card" data-color="#c3ff00">
-              <img src="sachet-matcha-reaper.png" alt="Matcha Reaper sachet">
-              <h3>Matcha Reaper Sachet</h3>
-              <p>
-                Clean matcha. Long burn, no crash. Dump it into water and let discipline steep.
-              </p>
-              <div class="sachet-meta">
-                <span class="tag">Cold-Blooded Calm</span>
-                <span class="meta-pill">Energy</span>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 3 -->
-          <div class="swiper-slide">
-            <div class="sachet-card" data-color="#ffaa00">
-              <img src="sachet-cocoa-carnage.png" alt="Cocoa Carnage sachet">
-              <h3>Cocoa Carnage Sachet</h3>
-              <p>
-                Dessert energy without surrendering to sugar. Thick cocoa, clean macros.
-              </p>
-              <div class="sachet-meta">
-                <span class="tag">Zero Guilt</span>
-                <span class="meta-pill">Recovery</span>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 4 -->
-          <div class="swiper-slide">
-            <div class="sachet-card" data-color="#00c4ff">
-              <img src="sachet-tropical-havoc.png" alt="Tropical Havoc sachet">
-              <h3>Tropical Havoc Sachet</h3>
-              <p>
-                Pineapple-mango chaos. Vacation taste, drill-sergeant discipline.
-              </p>
-              <div class="sachet-meta">
-                <span class="tag">Limited Drop</span>
-                <span class="meta-pill">Mood</span>
-              </div>
-            </div>
-          </div>
-        </div>
+/* EYEBROW */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
 
-        <!-- Swiper controls -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-    </div>
-  </div>
-</section>
+/* HERO */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 
-<!-- SECTION WIPES -->
-<section class="wipe-section wipe-dark" id="mission">
-  <div class="wipe-inner">
-    <p class="eyebrow">Manifesto</p>
-    <h2>We Don’t Do Balanced.</h2>
-    <p>
-      We do battle-ready nutrition. High impact, no fluff. If you want pastel
-      smoothies and inspirational quotes, the internet is full of them.
-    </p>
-  </div>
-</section>
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+  z-index: -2;
+}
 
-<section class="wipe-section wipe-light" id="science">
-  <div class="wipe-inner">
-    <p class="eyebrow">Formulation</p>
-    <h2>Engineered For Performance.</h2>
-    <p>
-      Real fruit powders, real plants, real macros. No fake sweeteners posing
-      as “health”, no quiet sugar bombs hiding in the back label.
-    </p>
-  </div>
-</section>
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.26), transparent 58%),
+    radial-gradient(circle at bottom right, rgba(255,0,51,0.55), transparent 60%);
+  mix-blend-mode: screen;
+  opacity: 0.6;
+  z-index: -1;
+}
 
-<section class="wipe-section wipe-danger" id="manifesto">
-  <div class="wipe-inner">
-    <p class="eyebrow">Sugar Is The Enemy</p>
-    <h2>Rebel Fuel Is The Weapon.</h2>
-    <p>
-      Every pod is one more shovel of dirt on your sugar habits. Hydrate,
-      dominate, and leave your old cravings in the grave.
-    </p>
-  </div>
-</section>
+.hero-content {
+  text-align: left;
+  max-width: 540px;
+}
 
-<!-- PRODUCT SHOWCASE WITH 360 VIEWER + FLAVOUR CARDS -->
-<section class="product-showcase section fade-slide-up" id="products">
-  <p class="eyebrow">Pods</p>
-  <h2>Featured Rogue Pods</h2>
-  <p class="section-intro">
-    Choose your weapon. Each pod is built for a different mission – focus,
-    energy, recovery or chaos. Zero sugar, maximum intent.
-  </p>
+.hero-content h1 {
+  font-family: 'Bodoni Moda SC', serif;
+  font-size: clamp(3rem, 5vw, 4.6rem);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
 
-  <div class="product-layout">
+.hero-copy {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 26px;
+  max-width: 440px;
+}
 
-    <!-- 360 PRODUCT ROTATION -->
-    <div class="product-360-container">
-      <!-- 
-        To enable 360° view:
-        1. Export sequential images (e.g. product-360-01.png ... product-360-24.png)
-        2. Place them in this folder
-        3. Keep the prefix / extension below OR adjust data-prefix / data-ext
-      -->
-      <div class="viewer360" 
-           data-frames="24" 
-           data-prefix="product-360-" 
-           data-ext="png">
-        <img src="product-360-01.png" alt="Rebel Fuel pod 360° view" class="viewer360-img">
-        <div class="viewer360-hint">Drag to inspect the weapon</div>
-      </div>
-      <p class="viewer-caption">
-        Spin the pod. Check every angle. This is what murdering your sugar habits looks like.
-      </p>
-    </div>
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 14px;
+}
 
-    <!-- ANIMATED FLAVOUR CARDS -->
-    <div class="flavor-grid">
-      <div class="flavor-card float-anim" data-color="#ff0033">
-        <h3>Berry Executioner</h3>
-        <p>
-          Violent wild-berry flavour, zero sugar. Good for your blender, lethal for your cravings.
-        </p>
-        <div class="flavor-meta">
-          <span class="tag">Sugar Dies Here</span>
-          <span class="meta-pill">Focus</span>
-        </div>
-      </div>
+.hero-disclaimer {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
 
-      <div class="flavor-card float-anim" data-color="#c3ff00">
-        <h3>Matcha Reaper</h3>
-        <p>
-          Clean plant caffeine, long-burn focus. All the edge, none of the crash.
-        </p>
-        <div class="flavor-meta">
-          <span class="tag">Cold-Blooded Calm</span>
-          <span class="meta-pill">Energy</span>
-        </div>
-      </div>
+/* CTA BUTTONS */
+.cta-btn {
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+}
 
-      <div class="flavor-card float-anim" data-color="#ffaa00">
-        <h3>Cocoa Carnage</h3>
-        <p>
-          Thick cocoa for people who want dessert without surrendering to sugar.
-        </p>
-        <div class="flavor-meta">
-          <span class="tag">Zero Guilt</span>
-          <span class="meta-pill">Recovery</span>
-        </div>
-      </div>
+.cta-btn.primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 14px 32px var(--accent-strong);
+}
 
-      <div class="flavor-card float-anim" data-color="#00c4ff">
-        <h3>Tropical Havoc</h3>
-        <p>
-          Pineapple-mango riot. Vacation for your taste buds, bootcamp for your discipline.
-        </p>
-        <div class="flavor-meta">
-          <span class="tag">Limited Drop</span>
-          <span class="meta-pill">Mood</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+.cta-btn.primary:hover {
+  background: #e0002d;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(255,0,51,0.7);
+}
 
-<!-- CTA SECTION WITH BACKGROUND CHANGE ON SCROLL -->
-<section class="scroll-bg-change section" id="cta">
-  <div class="cta-content">
-    <p class="eyebrow">Next Move</p>
-    <h2>Ready To Join The Rebels?</h2>
-    <p>
-      Get early access to new flavours, test batches and limited drops before
-      they vanish into legend.
-    </p>
-    <a href="shop.html" class="cta-btn primary">View All Pods</a>
-  </div>
-</section>
+.cta-btn.ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(255,255,255,0.25);
+}
 
-<footer>
-  <p>© 2025 Rebel Fuel – Bury Your Sugar Habits.</p>
-</footer>
+.cta-btn.ghost:hover {
+  background: rgba(255,255,255,0.06);
+}
 
-<!-- EMAIL SUBSCRIBE POPUP -->
-<div id="email-popup" class="popup-overlay">
-  <div class="popup">
-    <button class="popup-close" aria-label="Close popup">×</button>
-    <p class="eyebrow">Warning</p>
-    <h2>Limited Drops. No Second Chances.</h2>
-    <p>
-      Enter your email to be notified when new Rebel Fuel flavours go live.
-      No spam, no inspirational quotes – just lethal drops.
-    </p>
-    <form id="popup-form">
-      <input type="email" id="popup-email" placeholder="you@rebelfuel.com" required>
-      <button type="submit" class="cta-btn primary">Notify Me</button>
-    </form>
-    <p class="popup-note">You can unsubscribe any time. Sugar can’t.</p>
-  </div>
-</div>
+/* SCROLL REVEAL */
+.fade-in,
+.fade-slide-up,
+.wipe-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: 0.9s ease;
+}
 
-</body>
-</html>
+.fade-slide-up {
+  transform: translateY(40px);
+}
+
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ========================================= */
+/* LIQUID-DEATH STYLE SACHET SLIDER */
+/* ========================================= */
+
+.sachet-slider {
+  padding: 120px 0;
+}
+
+.sachet-title {
+  font-family: 'Bodoni Moda SC', serif;
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+}
+
+.sachet-sub {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.sachet-swiper {
+  width: 100%;
+  padding: 20px 0 60px;
+}
+
+.sachet-swiper .swiper-wrapper {
+  align-items: center;
+}
+
+.sachet-swiper .swiper-slide {
+  width: 280px;
+  transition: transform 0.35s ease;
+}
+
+/* Product Card */
+.sachet-item {
+  text-align: center;
+}
+
+.sachet-item img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 22px 42px rgba(0, 0, 0, 0.6));
+  transition: transform 0.35s ease;
+  transform-origin: center;
+}
+
+/* Active center zoom */
+.sachet-swiper .swiper-slide-active img {
+  transform: scale(1.22);
+}
+
+.sachet-item h3 {
+  font-family: 'Bodoni Moda SC', serif;
+  font-size: 1.3rem;
+  margin-top: 16px;
+}
+
+.sachet-item p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ========================================= */
+/* SECTION WIPES */
+/* ========================================= */
+
+.wipe-section {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8vw;
+  overflow: hidden;
+}
+
+.wipe-inner {
+  max-width: 620px;
+  text-align: center;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: 0.9s ease;
+}
+
+.wipe-section.visible .wipe-inner {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.wipe-section h2 {
+  font-family: 'Bodoni Moda SC', serif;
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+}
+
+.wipe-dark { background: #050505; }
+.wipe-light { background: #f5f5f5; color: #111; }
+.wipe-danger { background: var(--accent); }
+
+/* ========================================= */
+/* PRODUCT LAYOUT */
+/* ========================================= */
+
+.product-showcase h2 {
+  font-family: 'Bodoni Moda SC', serif;
+  font-size: 2.3rem;
+  margin-bottom: 8px;
+}
+
+.section-intro {
+  max-width: 580px;
+  margin: 0 auto 34px;
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .product-layout { grid-template-columns: 1fr; }
+}
+
+/* 360 Viewer */
+.product-360-container {
+  text-align: center;
+}
+
+.viewer360 {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: grab;
+  background: radial-gradient(circle at top, #1b1b1b 0, #050505 60%);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+}
+
+.viewer360:active { cursor: grabbing; }
+
+.viewer360-img {
+  width: 100%;
+  display: block;
+}
+
+.viewer360-hint {
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  font-size: 0.72rem;
+  background: rgba(0,0,0,0.7);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Flavor Cards */
+.flavor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+@media (max-width: 700px) {
+  .flavor-grid { grid-template-columns: 1fr; }
+}
+
+.flavor-card {
+  padding: 20px 18px;
+  border-radius: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.6);
+  transition: 0.2s ease;
+}
+
+.flavor-card h3 {
+  font-family: 'Bodoni Moda SC';
+  font-size: 1.25rem;
+}
+
+.flavor-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 10px 0;
+}
+
+.flavor-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag, .meta-pill {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tag { background: rgba(255,255,255,0.08); }
+.meta-pill { background: rgba(0,0,0,0.45); color: var(--muted); }
+
+.flavor-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ========================================= */
+/* CTA BG CHANGE */
+/* ========================================= */
+
+.scroll-bg-change {
+  background: linear-gradient(120deg, #181818, #050505);
+  transition: background 0.9s ease;
+}
+
+.scroll-bg-change.scrolled {
+  background: linear-gradient(120deg, var(--accent), #050505);
+}
+
+/* FOOTER */
+footer {
+  padding: 40px 8vw 30px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ========================================= */
+/* EMAIL POPUP */
+/* ========================================= */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 50;
+}
+
+.popup-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup {
+  background: #101010;
+  padding: 26px 22px;
+  border-radius: 18px;
+  max-width: 380px;
+  width: 90%;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 24px 50px rgba(0,0,0,0.8);
+  position: relative;
+}
+
+.popup h2 {
+  font-family: 'Bodoni Moda SC';
+  font-size: 1.6rem;
+}
+
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+#popup-email {
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: #050505;
+  color: #fff;
+}
+
+/* RESPONSIVE HEADER */
+@media (max-width: 640px) {
+  header nav a {
+    margin-left: 12px;
+    font-size: 0.75rem;
+  }
+}
+
 
 
