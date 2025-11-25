@@ -135,7 +135,7 @@ header nav a {
 /* SACHET SLIDER                             */
 /* ========================================= */
 .sachet-slider {
-  padding: 80px 0 140px;
+  padding: 80px 0 120px;
   text-align: center;
   background: #ffffff;
   color: #000
@@ -156,7 +156,7 @@ header nav a {
 }
 
 .sachet-swiper {
-  padding: 20px 0 100px;
+  padding: 20px 0 80px;
 }
 
 .sachet-swiper .swiper-slide {
